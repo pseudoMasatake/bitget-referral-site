@@ -1,4 +1,5 @@
 @echo off
 cd /d %~dp0
-python scripts\entrypoint.py
+py scripts\entrypoint.py --gui
+if %errorlevel% neq 0 python scripts\entrypoint.py --gui
 pause
