@@ -1,3 +1,2 @@
-# Bitget比較ラボ
-- objective: maximize_bitget_referral_clicks_then_referral_outcomes
-- site_url: https://example.com
+Bitget比較ラボ
+https://example.com
