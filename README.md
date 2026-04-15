@@ -1,21 +1,12 @@
-# Affiliate Bot Project
+# affiliate_bot_project
 
-このプロジェクトは、**あなたが編集する場所を `config/user_settings.json` だけに集約**した、GitHub Pages 用の自動生成アフィリエイトサイトです。
+## 構造
+- `user/` あなたの設定だけ。今後の本体更新で消さない。
+- `app/` 私が更新する本体コード。
+- `docs/` 生成される公開用サイト。
+- `data/state/` 実行ログと review bundle。
 
-## あなたが触る場所
-- `config/user_settings.json` だけ
-
-## あなたが触らない場所
-- `core/` すべて
-- `scripts/` すべて
-- `.github/workflows/` すべて
-
-## 起動方法
-- ローカル: `python scripts/launch.py`
-- GitHub: Actions → `Build and Publish Affiliate Site` → `Run workflow`
-
-## ChatGPT に投げるとき
-この3つだけ渡せば改善しやすいです。
-- `config/user_settings.json`
-- `data/state/improvement_packet.md`
-- `data/state/build_state.json`
+## 今後の更新ルール
+- 私が送る更新は原則 `app/` と起動スクリプトだけ。
+- `user/profile.json` は残す。ここに招待URLと token を保持する。
+- 新しい本体ZIPを上書きしても `user/` を消さなければ再入力不要。
