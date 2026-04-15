@@ -1,21 +1,35 @@
-# 手順書
+# 3分セットアップ
 
-## 初回だけ
-1. `start_local_windows.bat` または `start_local_unix.sh` を起動する。
-2. GUI が開いたら、`Bitget 招待リンク` を貼る。
-3. `GitHub に公開する` を ON のままにする。
-4. すでに `gh auth login` 済みならそのまま `保存して公開まで実行` を押す。
-5. `gh` 未設定なら、GUI の GitHub 欄に
-   - GitHub ユーザー名
-   - Personal Access Token
-   を入れて `保存して公開まで実行` を押す。
+## 触るのは原則これだけ
+- `config/user_settings.json`
 
-## 2回目以降
-1. 同じ起動ファイルを実行する。
-2. 自動で生成・push・公開更新まで進む。
-3. 必要なら `data/state/review_bundle.zip` をこのチャットへ投げる。
+## 1. まず 1ファイルだけ編集
+次の項目だけ差し替える。
+- `site.site_url`
+- `site.owner_name`
+- `offers[].offer_url`
 
-## エラー時
-1. GUI の赤い欄をそのままコピーする。
-2. または `data/state/setup_error_report.txt` を開いて中身を全部コピーする。
-3. このチャットに貼る。
+余裕があれば次も変える。
+- `site.site_name`
+- `offers[].name`
+- `offers[].audience`
+
+## 2. GitHub に置く
+- 新規リポジトリを作る
+- このフォルダ一式を push する
+
+## 3. Pages を有効化
+- Settings → Pages
+- Source を GitHub Actions にする
+
+## 4. Actions を有効化
+- Actions タブを開く
+- Workflow を有効化する
+
+## 5. 起動
+- Actions → `Build and Publish Affiliate Site`
+- `Run workflow` を押す
+
+## 今後の操作
+- ふだんは `Run workflow` を押すだけ
+- 改善したいときは `data/state/improvement_packet.md` を ChatGPT に投げるだけ
