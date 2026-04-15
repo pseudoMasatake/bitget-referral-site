@@ -16,12 +16,13 @@ from core.settings import load_settings, startup_needs_gui
 def main() -> None:
     settings = load_settings(PROJECT_ROOT)
     force_gui = '--gui' in sys.argv
+    force_local_only = '--local-only' in sys.argv
     if force_gui or startup_needs_gui(settings):
         launch_gui(PROJECT_ROOT)
         return
 
     try:
-        result = run_pipeline(PROJECT_ROOT, settings, publish=True)
+        result = run_pipeline(PROJECT_ROOT, settings, publish=not force_local_only)
         print('OK')
         print(f"site_url={ (result.get('publish') or {}).get('site_url') or (result.get('build') or {}).get('site_url') }")
         print(f"review_bundle={PROJECT_ROOT / 'data' / 'state' / 'review_bundle.zip'}")
