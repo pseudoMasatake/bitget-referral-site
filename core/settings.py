@@ -119,5 +119,12 @@ def validate_settings(settings: dict[str, Any]) -> list[str]:
     return warnings
 
 
+def publish_ready(settings: dict[str, Any]) -> bool:
+    github = settings.get('github', {})
+    if not github.get('publish_enabled', True):
+        return True
+    return bool((github.get('github_token') or '').strip())
+
+
 def startup_needs_gui(settings: dict[str, Any]) -> bool:
-    return not referral_ready(settings)
+    return (not referral_ready(settings)) or (not publish_ready(settings))
