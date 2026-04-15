@@ -1,0 +1,115 @@
+{
+  "built_at": "2026-04-15T01:41:58.085426+00:00",
+  "page_count": 13,
+  "pages": [
+    {
+      "slug": "index",
+      "title": "Bitgetを比較して最短で始めるための入口",
+      "keyword": "Bitget 比較",
+      "stage": "hub",
+      "priority": 0.5271,
+      "predicted_ctr": 0.375
+    },
+    {
+      "slug": "bitget-registration-guide",
+      "title": "Bitgetの始め方を最短で確認する",
+      "keyword": "Bitget 始め方",
+      "stage": "high_intent",
+      "priority": 0.9041,
+      "predicted_ctr": 0.5455
+    },
+    {
+      "slug": "bitget-fees-guide",
+      "title": "Bitgetの手数料を登録前に整理する",
+      "keyword": "Bitget 手数料",
+      "stage": "high_intent",
+      "priority": 0.9002,
+      "predicted_ctr": 0.833
+    },
+    {
+      "slug": "bitget-safety-guide",
+      "title": "Bitgetの安全性を不安ごとに切り分ける",
+      "keyword": "Bitget 安全性",
+      "stage": "mid_intent",
+      "priority": 0.7621,
+      "predicted_ctr": 0.5895
+    },
+    {
+      "slug": "bitget-bonus-guide",
+      "title": "Bitgetの招待特典とキャンペーン確認の入口",
+      "keyword": "Bitget 招待コード",
+      "stage": "high_intent",
+      "priority": 0.8418,
+      "predicted_ctr": 0.9655
+    },
+    {
+      "slug": "bitget-app-guide",
+      "title": "Bitgetアプリ中心で使いたい人向けの整理",
+      "keyword": "Bitget アプリ",
+      "stage": "mid_intent",
+      "priority": 0.7117,
+      "predicted_ctr": 0.618
+    },
+    {
+      "slug": "bitget-beginner-checklist",
+      "title": "Bitgetに進む前の初心者チェックリスト",
+      "keyword": "仮想通貨 初心者 取引所 おすすめ",
+      "stage": "mid_intent",
+      "priority": 0.5829,
+      "predicted_ctr": 0.487
+    },
+    {
+      "slug": "bitget-copy-trading-guide",
+      "title": "Bitgetのコピートレード導線を確認する",
+      "keyword": "Bitget コピートレード",
+      "stage": "mid_intent",
+      "priority": 0.7618,
+      "predicted_ctr": 0.8305
+    },
+    {
+      "slug": "bitget-kyc-guide",
+      "title": "Bitgetの本人確認まわりを登録前に把握する",
+      "keyword": "Bitget 本人確認",
+      "stage": "high_intent",
+      "priority": 0.6934,
+      "predicted_ctr": 0.9945
+    },
+    {
+      "slug": "bitget-bybit-comparison",
+      "title": "BitgetとBybitを比較してから決める",
+      "keyword": "Bitget Bybit 比較",
+      "stage": "high_intent",
+      "priority": 0.7547,
+      "predicted_ctr": 0.5685
+    },
+    {
+      "slug": "bitget-binance-comparison",
+      "title": "BitgetとBinanceを比較したい人向けの整理",
+      "keyword": "Bitget Binance 比較",
+      "stage": "mid_intent",
+      "priority": 0.6047,
+      "predicted_ctr": 0.4505
+    },
+    {
+      "slug": "bitget-mexc-comparison",
+      "title": "BitgetとMEXCで迷う人向けの判断材料",
+      "keyword": "Bitget MEXC 比較",
+      "stage": "mid_intent",
+      "priority": 0.7369,
+      "predicted_ctr": 0.628
+    },
+    {
+      "slug": "bitget-faq",
+      "title": "Bitgetで詰まりやすい疑問のまとめ",
+      "keyword": "Bitget よくある質問",
+      "stage": "support",
+      "priority": 0.4788,
+      "predicted_ctr": 0.333
+    }
+  ],
+  "warnings": [],
+  "site_name": "Bitget比較ラボ",
+  "site_url": "https://pseudoMasatake.github.io/bitget-referral-site",
+  "settings_fingerprint": "7330f910ec0ec542",
+  "review_bundle_zip": "C:\\Users\\MS\\Downloads\\affiliate_bot_project_hotfix\\affiliate_bot_project\\data\\state\\review_bundle.zip"
+}

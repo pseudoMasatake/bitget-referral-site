@@ -1,0 +1,3 @@
+# Bitget比較ラボ
+- objective: maximize_bitget_referral_clicks_then_referral_outcomes
+- site_url: https://pseudoMasatake.github.io/bitget-referral-site

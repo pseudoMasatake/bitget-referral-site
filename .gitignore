@@ -1,0 +1,4 @@
+config/.local_secrets.json
+__pycache__/
+*.pyc
+data/state/setup_error_report.txt

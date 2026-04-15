@@ -1,0 +1,62 @@
+{
+  "winners": [
+    {
+      "slug": "bitget-registration-guide",
+      "title": "Bitgetの始め方を最短で確認する",
+      "keyword": "Bitget 始め方",
+      "stage": "high_intent",
+      "priority": 0.9041,
+      "predicted_ctr": 0.5455
+    },
+    {
+      "slug": "bitget-fees-guide",
+      "title": "Bitgetの手数料を登録前に整理する",
+      "keyword": "Bitget 手数料",
+      "stage": "high_intent",
+      "priority": 0.9002,
+      "predicted_ctr": 0.833
+    },
+    {
+      "slug": "bitget-bonus-guide",
+      "title": "Bitgetの招待特典とキャンペーン確認の入口",
+      "keyword": "Bitget 招待コード",
+      "stage": "high_intent",
+      "priority": 0.8418,
+      "predicted_ctr": 0.9655
+    },
+    {
+      "slug": "bitget-safety-guide",
+      "title": "Bitgetの安全性を不安ごとに切り分ける",
+      "keyword": "Bitget 安全性",
+      "stage": "mid_intent",
+      "priority": 0.7621,
+      "predicted_ctr": 0.5895
+    }
+  ],
+  "losers": [
+    {
+      "slug": "bitget-faq",
+      "title": "Bitgetで詰まりやすい疑問のまとめ",
+      "keyword": "Bitget よくある質問",
+      "stage": "support",
+      "priority": 0.4788,
+      "predicted_ctr": 0.333
+    },
+    {
+      "slug": "index",
+      "title": "Bitgetを比較して最短で始めるための入口",
+      "keyword": "Bitget 比較",
+      "stage": "hub",
+      "priority": 0.5271,
+      "predicted_ctr": 0.375
+    },
+    {
+      "slug": "bitget-beginner-checklist",
+      "title": "Bitgetに進む前の初心者チェックリスト",
+      "keyword": "仮想通貨 初心者 取引所 おすすめ",
+      "stage": "mid_intent",
+      "priority": 0.5829,
+      "predicted_ctr": 0.487
+    }
+  ]
+}

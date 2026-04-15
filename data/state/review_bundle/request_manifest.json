@@ -1,0 +1,16 @@
+{
+  "requested_items": [
+    {
+      "priority": 1,
+      "item": "Bitgetの招待ダッシュボードのスクリーンショット",
+      "reason": "実クリック後の成果を評価して、クリック最適化から招待最適化に重みを移すため",
+      "when_needed": "成果が出始めた時か、クリックが多いのに成果が見えない時"
+    },
+    {
+      "priority": 2,
+      "item": "GitHub Pagesの実URL",
+      "reason": "公開後の内部リンク・canonical・sitemap表記を確定させるため",
+      "when_needed": "初回公開後"
+    }
+  ]
+}

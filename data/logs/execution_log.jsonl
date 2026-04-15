@@ -1,0 +1,4 @@
+{"timestamp": "2026-04-15T00:14:54", "page_count": 13, "site_name": "VPN比較ラボ", "offers": 2}
+{"timestamp": "2026-04-15T00:35:17", "page_count": 19, "warnings": ["bitget_referral_url が初期値のままです。"], "site_name": "Bitget登録導線ラボ", "settings_fingerprint": "1107c2a768553966d444a2e664d8a11ad62e4f9f06a4117cacbab3c4034c9fbe"}
+{"timestamp": "2026-04-15T00:47:20", "page_count": 16, "warnings": ["bitget_referral_url が初期値のままです。", "site_url はプレースホルダーです。GitHub Pages 上でビルドすれば自動で本番URLに置き換わります。"], "site_name": "Bitget登録導線ラボ", "settings_fingerprint": "338d8e7a4d0b3489942494fd99c7a4c33e63ceafb6af9d08fa1251ab263e4e9b", "site_url": "https://example.com", "top_pages": ["bitget-kyc-guide", "bitget-bybit-comparison", "bitget-registration-guide", "bitget-mexc-comparison"]}
+{"timestamp": "2026-04-15T01:08:53", "publish_requested": false, "published": false, "warnings": ["Bitget招待リンクが初期値のままです。"], "site_url": "https://example.com", "page_count": 13}

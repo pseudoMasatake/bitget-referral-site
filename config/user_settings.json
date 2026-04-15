@@ -1,0 +1,13 @@
+{
+  "bitget_referral_url": "https://www.bitget.com/ja/referral/register?clacCode=D4ESMMUZ&from=%2Fja%2Fevents%2Freferral-all-program&source=events&utmSource=PremierInviter",
+  "github": {
+    "publish_enabled": true,
+    "repo_name": "",
+    "github_username": "pseudoMasatake",
+    "github_token": ""
+  },
+  "optional": {
+    "notes_for_chatgpt": "",
+    "force_rebuild": false
+  }
+}
