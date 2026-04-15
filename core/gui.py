@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 import tkinter as tk
 from tkinter import ttk, messagebox
@@ -41,7 +42,7 @@ class App(tk.Tk):
         title = ttk.Label(frame, text='Bitget 自動公開セットアップ', font=('Segoe UI', 18, 'bold'))
         title.pack(anchor='w', **pad)
 
-        sub = ttk.Label(frame, text='初回だけGUIで設定。GitHub token はローカル専用で保存し、公開用ファイルには含めません。')
+        sub = ttk.Label(frame, text='初回だけGUIで設定。招待リンクと GitHub token を入れるだけで、repo 作成・公開・Pages 更新まで自動で進めます。token はローカル専用で保存し、公開用ファイルには含めません。')
         sub.pack(anchor='w', **pad)
 
         box = ttk.LabelFrame(frame, text='必須')
@@ -55,9 +56,9 @@ class App(tk.Tk):
         ttk.Checkbutton(gh_box, text='GitHub に公開する', variable=self.publish_var).grid(row=0, column=0, sticky='w', padx=10, pady=6)
         ttk.Label(gh_box, text='repo 名（空なら自動で bitget-referral-site）').grid(row=1, column=0, sticky='w', padx=10, pady=6)
         ttk.Entry(gh_box, textvariable=self.repo_var).grid(row=1, column=1, sticky='ew', padx=10, pady=6)
-        ttk.Label(gh_box, text='GitHub ユーザー名（gh 未ログイン時だけ）').grid(row=2, column=0, sticky='w', padx=10, pady=6)
+        ttk.Label(gh_box, text='GitHub ユーザー名（空で可。token から自動取得）').grid(row=2, column=0, sticky='w', padx=10, pady=6)
         ttk.Entry(gh_box, textvariable=self.username_var).grid(row=2, column=1, sticky='ew', padx=10, pady=6)
-        ttk.Label(gh_box, text='GitHub token（gh 未ログイン時だけ）').grid(row=3, column=0, sticky='w', padx=10, pady=6)
+        ttk.Label(gh_box, text='GitHub token（classic 推奨。repo scope）').grid(row=3, column=0, sticky='w', padx=10, pady=6)
         ttk.Entry(gh_box, textvariable=self.token_var, show='*').grid(row=3, column=1, sticky='ew', padx=10, pady=6)
         gh_box.columnconfigure(1, weight=1)
 
@@ -96,6 +97,7 @@ class App(tk.Tk):
         ctx.append(f"python: OK")
         ctx.append(f"git: {'OK' if tool_exists('git') else 'MISSING'}")
         ctx.append(f"gh: {'LOGGED_IN' if gh_authenticated(self.project_root, __import__('core.publisher', fromlist=['PublishContext']).PublishContext()) else ('FOUND' if tool_exists('gh') else 'MISSING')}")
+        ctx.append(f"token: {'SET' if bool(self.token_var.get().strip()) else 'EMPTY'}")
         ctx.append(f"referral_ready: {'YES' if referral_ready(self.current_settings()) else 'NO'}")
         ctx.append(f"repo_name: {infer_repo_name(self.current_settings())}")
         warnings = validate_settings(self.current_settings())
@@ -119,7 +121,13 @@ class App(tk.Tk):
             result = run_pipeline(self.project_root, settings, publish=publish)
             self.output.delete('1.0', 'end')
             self.output.insert('1.0', json.dumps(result, ensure_ascii=False, indent=2))
-            messagebox.showinfo('完了', '生成が終わりました。review_bundle.zip を必要時にこのチャットへ投げてください。')
+            site_url = ((result.get('publish') or {}).get('site_url') or (result.get('build') or {}).get('site_url') or '').strip()
+            if site_url and site_url != 'https://example.com':
+                try:
+                    webbrowser.open(site_url)
+                except Exception:
+                    pass
+            messagebox.showinfo('完了', f'生成が終わりました。公開URL: {site_url or "未確定"}')
         except Exception as exc:
             report = write_error_report(self.project_root, step='gui_run_pipeline', exc=exc, settings=settings)
             self.output.delete('1.0', 'end')
@@ -144,5 +152,16 @@ class App(tk.Tk):
 
 
 def launch_gui(project_root: Path, initial_error: str = '') -> None:
+    if os.environ.get('BITGET_BOT_TEST_MODE') == '1':
+        settings = load_settings(project_root)
+        payload = {
+            'gui_test_mode': True,
+            'referral_ready': referral_ready(settings),
+            'publish_enabled': settings.get('github', {}).get('publish_enabled', True),
+            'has_token': bool(load_local_secrets(project_root).get('github', {}).get('github_token', '').strip()),
+            'repo_name': infer_repo_name(settings),
+        }
+        print(json.dumps(payload, ensure_ascii=False))
+        return
     app = App(project_root, initial_error=initial_error)
     app.mainloop()
